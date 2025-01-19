@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaSignInAlt, FaUserPlus, FaSignOutAlt } from "react-icons/fa";
 
 const Navbar = ({ token, handleLogout }) => {
   return (
@@ -14,13 +15,19 @@ const Navbar = ({ token, handleLogout }) => {
           {!token ? (
             <>
               <li>
-                <Link to="/login" className="hover:text-teal-400">
-                  Login
+                <Link
+                  to="/login"
+                  className="flex items-center hover:text-teal-400"
+                >
+                  <FaSignInAlt className="mr-2" /> Login
                 </Link>
               </li>
               <li>
-                <Link to="/register" className="hover:text-teal-400">
-                  Register
+                <Link
+                  to="/register"
+                  className="flex items-center hover:text-teal-400"
+                >
+                  <FaUserPlus className="mr-2" /> Register
                 </Link>
               </li>
             </>
@@ -28,9 +35,9 @@ const Navbar = ({ token, handleLogout }) => {
             <li>
               <button
                 onClick={handleLogout}
-                className="text-teal-400 hover:text-teal-600"
+                className="flex items-center text-teal-400 hover:text-teal-600"
               >
-                Logout
+                <FaSignOutAlt className="mr-2" /> Logout
               </button>
             </li>
           )}
